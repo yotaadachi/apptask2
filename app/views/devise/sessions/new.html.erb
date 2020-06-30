@@ -6,10 +6,17 @@
     </nav>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+          <li><a class="glyphicon glyphicon-home home" href="/users/20065"> Home</a></li>
+          <li><a class="glyphicon glyphicon-user users" href="/users"> Users</a></li>
+          <li><a class="glyphicon glyphicon-book books" href="/books"> Books</a></li>
+          <li><a class="glyphicon glyphicon-log-out logout" rel="nofollow" data-method="delete" href="/users/sign_out"> logout</a></li>
+      <% else %>
           <li><a class="glyphicon glyphicon-home home" href="/"> Home</a></li>
           <li><a class="glyphicon glyphicon-link about" href="/home/about"> About</a></li>
           <li><a class="glyphicon glyphicon-edit sign_up" href="/users/sign_up"> sign up</a></li>
           <li><a class="glyphicon glyphicon-log-in sign_in" href="/users/sign_in"> login</a></li>
+      <% end %>
       </ul>
     </nav>
   </div>
@@ -21,7 +28,7 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.email_field :name, autofocus: true, autocomplete: "name" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
 
   <div class="field">
@@ -35,9 +42,8 @@
       <%= f.label :remember_me %>
     </div>
   <% end %>
-
-   <button type="button" class="btn btn-primary">Log in</button>
-<% end %>
+   <%= f.submit "Log in", class: "btn btn-primary" %>
+  <% end %>
 
 <%= render "devise/shared/links" %>
 </div>
