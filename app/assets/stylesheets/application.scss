@@ -17,9 +17,14 @@
  @import "bootstrap";
 
  /*cssはこれより下に書く*/
-
- /*new.html.erb-session*/
+/*new.html.erb-session*/
  /*new.html.erb-registrations*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #6c6b6b;
+}
 .Login_Signup_body {
 	margin: 33px;
 }
