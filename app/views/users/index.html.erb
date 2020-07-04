@@ -5,5 +5,24 @@
     <%= render 'books/newbook', book: @book_new %>
    </div>
 　　<div class="col-xs-9">
+	<h2 class="headline" style="padding-top: 20px;">Users</h2>
+      <table class="table">
+　     <thead>
+　　   　<tr>
+	     <th>image</th>
+　　　    <th>name</th>
+　　　    <th></th>
+　　     </tr>
+　      </thead>
+      　<tbody>
+　       <% @users.each do |user| %>
+　　     　<tr class="contents">
+	       <td><%= attachment_image_tag user, :profile_image, :fill, 30, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%></td>
+　　　      <td><%= user.name %></td>
+　　　      <td><%= link_to "show", user_path(user.id) %></td>
+　　     　</tr>
+　       <% end %>
+　　　　 </tbody>
+　　　  </table>
    </div>
 </div>
