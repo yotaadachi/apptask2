@@ -15,6 +15,10 @@
   </tbody>
  </table>
  <div class="row">
-  <P><%= link_to "", edit_user_path(current_user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_path" %></P>
+   <% if user.id == current_user.id %>
+   <P>
+      <%= link_to "", edit_user_path(current_user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_path" %>
+   </P>
+   <% end %>
 　<% end %>
  </div>

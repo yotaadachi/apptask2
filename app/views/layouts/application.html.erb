@@ -25,13 +25,16 @@
       <% else %>
        <li><%= link_to 'Home', root_path, class: "glyphicon glyphicon-home" %></li>
        <li><%= link_to 'About', about_path, class: "glyphicon glyphicon-link" %></li>
-       <li><%= link_to 'sign up', new_user_registration_path, class: "glyphicon glyphicon-edit" %></li>
+       <li><%= link_to 'Sign up', new_user_registration_path, class: "glyphicon glyphicon-edit" %></li>
        <li><%= link_to 'login', new_user_session_path, class: "glyphicon glyphicon-log-in" %></li>
       <% end %>
       </ul>
      </nav>
     </div>
    </header>
+   <p id="notice">
+    <%= notice %>
+   </p>
   <%= yield %>
    <footer>
      <div class="row">
