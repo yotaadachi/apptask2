@@ -30,6 +30,11 @@
           <% end %>
 　　　　 </tbody>
 　　　  </table>
+       <% if flash[:notice] %>
+        <div class="flash">
+         <%= flash[:notice] %>
+        </div>
+       <% end %>
    </div>
   </div>
  </div>
